@@ -5,6 +5,11 @@ import UserEdit from '@/components/Users/EditUser'
 import UserShow from '@/components/Users/ShowUser'
 import UserCreate from '@/components/Users/CreateUser'
 
+import CarIndex from '@/Car/Index'
+import CarEdit from '@/Car/EditCar'
+import CarShow from '@/Car/ShowCar'
+import CarCreate from '@/Car/CreateCar'
+
 Vue.use(Router)
 
 export default new Router({
@@ -30,7 +35,26 @@ export default new Router({
       component: UserIndex
     },
 
-    
+    {
+      path: '/Car/create',
+      name: 'Car-create',
+      component: CarCreate
+    },
+    {
+      path: '/Car/edit/:userId',
+      name: 'Car-edit',
+      component: CarEdit
+    },
+    {
+      path: '/Car/:userId',
+      name: 'Car',
+      component: CarShow
+    },
+    {
+      path: '/Cars',
+      name: 'Cars',
+      component: CarIndex
+    },
 
   ]
 })
